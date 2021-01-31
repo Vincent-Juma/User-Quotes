@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+	<head>
+		<meta charset="UTF-8" name="viewport" content="width-device=width, initial-scale=1"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+		<script src="js/angular.js"></script>
+		<script src="js/script.js"></script>
+	</head>
+<body ng-controller="myController">
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<!-- <a class="navbar-brand" href="https://sourcecodester.com">Sourcecodester</a> -->
+		</div>
+	</nav>
+	<div class="col-md-3"></div>
+	<div class="col-md-6 well">
+		<h3 class="text-primary">Upvote and Downvote Count</h3>
+		<hr style="border-top:1px dotted #000;"/>
+		<table class="table table-bordered">
+			<thead class="alert-info">
+				<tr>
+					<th>Full Name</th>
+					<th>Action</th>
+					<th>Vote Count</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="member in members">
+					<td>{{member.name}}</td>
+					<td><button class="btn btn-primary btn-sm" ng-click= "incrementUp(member)"><span class="glyphicon glyphicon-arrow-up"></span> Upvote</button> | <button class="btn btn-danger btn-sm" ng-click= "incrementDown(member)"><span class="glyphicon glyphicon-arrow-down"></span> Downvote</button></td>
+					<td>{{member.Votes}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>		
+</html>
